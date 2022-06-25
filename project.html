@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Joan&display=swap');
+
+        /*CSS reset */
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navigation Bar */
+        #navbar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0px;
+            position: sticky;
+        }
+
+        #navbar::before {
+            content: "";
+            background-color: black;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+        #navbar ul {
+            display: flex;
+            align-items: left;
+            justify-content: right;
+            /*border: 2px solid black;*/
+            margin: 10px;
+            padding: 4px;
+            width: 100%;
+            margin-left: 2px;
+            padding-left: 2px;
+        }
+
+        #navbar ul li {
+            font-size: 20px;
+            list-style: none;
+            padding: 4px 15px;
+        }
+
+        #navbar ul li a {
+            text-decoration: none;
+            color: white;
+        }
+
+        #navbar ul li a:hover {
+            background-color: white;
+            color: black;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        #logo {
+            /*border: 2px solid black;*/
+            margin: 5px 2px;
+            margin-left: 15px;
+            text-align: center;
+            font-size: x-large;
+            color: aliceblue;
+            font-family: 'Joan', serif;
+        }
+
+        /*About section*/
+        #about {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+            padding: 60px;
+            height: 128px;
+        }
+
+        #about::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 318px;
+            z-index: -1;
+            opacity: 0.5;
+            background: url('/image.jpg') no-repeat center center/cover;
+        }
+
+        #about p {
+            text-align: center;
+            color: black;
+            font-weight: bold;
+        }
+
+        /*Project */
+        #project-box {
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            width: 100%;
+        }
+
+        #project-box {
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 418px;
+            z-index: -1;
+        }
+
+        #project h1 {
+            padding: 0px;
+            margin-top: 29px;
+            margin-bottom: -16px;
+        }
+
+        .box {
+            border: 2px solid black;
+            border-radius: 10px;
+            background-color: whitesmoke;
+            color: black;
+            width: 500px;
+            height: 300px;
+            margin: 15px;
+            padding: 15px;
+            text-align: center;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box:hover {
+            background-color: black;
+            color: white;
+            border: 10px solid black;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        /*testimonial box*/
+        #testimonial::before{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 288px;
+            z-index: -1;
+            background-color: blanchedalmond;
+        }
+        #testimonial {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .test {
+            border: 0.1px solid grey;
+            border-radius: 8px;
+            height: 259px;
+            width: 200px;
+            padding: 15px;
+            margin-left: -195px;
+            transition: margin-left 500ms;
+            color: transparent;
+        }
+        .test:hover{
+            margin-left: 2em;
+            cursor: pointer;
+            background-color: rgb(245, 245, 220);
+            color: black;
+            height: 300px;
+            width: 250px;
+            z-index: 100;
+        }
+
+        /*Contact me*/
+        #contact {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #con-style {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .contact-style {
+            border: 0.5px solid black;
+            border-radius: 10px;
+            color: black;
+            padding: 10px;
+            margin: 10px;
+            text-decoration: none;
+            width: 164px;
+            height: 100px;
+        }
+
+        #contact h1 {
+            padding: 4px;
+            margin-top: -29px;
+            margin-bottom: 9px;
+        }
+
+        /*Others*/
+        .h-primary {
+            font-family: 'Joan', serif;
+            font-size: xx-large;
+            text-align: center;
+            padding: 10px;
+        }
+
+        .h-second {
+            font-family: 'Joan', serif;
+            font-size: x-large;
+            text-align: center;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            font-size: medium;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav id="navbar">
+        <div id="logo">
+            <span style="font-family: 'Joan', serif;"> Portfolio</span>
+        </div>
+        <ul>
+            <li class="items"><a href="#navbar">Home</a></li>
+            <li class="items"><a href="#about">About Me</a></li>
+            <li class="items"><a href="#project">Project</a></li>
+            <li class="items"><a href="#contact">Contact Me</a></li>
+        </ul>
+    </nav>
+    <section id="about">
+        <h1 class="h-primary" style="text-align: center;">About Me</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus non omnis Lorem ipsum, dolor sit amet
+            consectetur adipisicing elit. Incidunt totam et officia quasi quod vero suscipit optio velit voluptatum
+            tempora. optio qui necessitatibus eligendi!</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Veritatis, Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Totam, qui!</p>
+    </section>
+
+    <section id="project">
+        <h1 class="h-primary" style="text-align: center;">Projects</h1>
+        <div id="project-box">
+            <div class="box">
+                <h2 class="h-second" style="text-align: center;">Project 1</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+
+            <div class="box">
+                <h2 class="h-second" style="text-align: center;">Project 2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+
+            <div class="box">
+                <h2 class="h-second" style="text-align: center;">Project 3</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+
+            <div class="box">
+                <h2 class="h-second" style="text-align: center;">Project 4</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+        </div>
+    </section>
+    <section id="testi">
+        <h1 class="h-primary" style="text-align: center;">Testimonial</h1>
+        <section id="testimonial">
+            <div class="test">
+                <h2 class="h-second" style="text-align: center;">Testimonial 1</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+
+            <div class="test">
+                <h2 class="h-second" style="text-align: center;">Testimonial 2</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+
+            <div class="test">
+                <h2 class="h-second" style="text-align: center;">Testimonial 3</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+            <div class="test">
+                <h2 class="h-second" style="text-align: center;">Testimonial 4</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+            <div class="test">
+                <h2 class="h-second" style="text-align: center;">Testimonial 5</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+            <div class="test">
+                <h2 class="h-second" style="text-align: center;">Testimonial 6</h2>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit odio in esse iste? Libero
+                    dolore voluptatum delectus? Ex, nam, quasi ullam suscipit veritatis doloremque accusamus, quas non
+                    minima ipsum corrupti?
+                </p>
+            </div>
+        </section>
+    </section>
+
+    <section id="contact">
+        <h1 class="h-primary" style="text-align: center;">Contact Me</h1>
+        <div id="con-style">
+            <div class="contact-style">Phone no: 9163955710
+            </div>
+            <div class="contact-style">Email id: 2006184@kiit.ac.in</div>
+            <div class="contact-style">LinkedIn: <a href="www.linkedin.com/in/pratima-chaudhury-2002"
+                    target="_blank">pratima-chaudhury-2002</a></div>
+        </div>
+    </section>
+    <footer>
+        Copyright &copy; All rights reserved!
+    </footer>
+</body>
+
+</html>
